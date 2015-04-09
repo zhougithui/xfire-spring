@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="ws Maven Webapp">
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/test"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <property name="context-root" value="/ws"/>
+        <property name="java-output-path" value="/ws Maven Webapp/src/main/webapp/WEB-INF/classes"/>
+    </wb-module>
+</project-modules>

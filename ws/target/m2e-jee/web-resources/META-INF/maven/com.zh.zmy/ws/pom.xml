@@ -1,0 +1,184 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.zh.zmy</groupId>
+  <artifactId>ws</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>ws Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  
+  <!-- 项目属性 --> 
+	<properties>
+		<!-- version setting -->
+		<spring.version>3.2.5.RELEASE</spring.version>
+		<xfire.version>1.2.6</xfire.version>
+	</properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    
+    <dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-core</artifactId>
+		<version>${spring.version}</version>
+		<exclusions>
+			<exclusion>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-beans</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-context-support</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-aop</artifactId>
+		<version>${spring.version}</version>
+		<exclusions>
+			<exclusion>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-tx</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-web</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-webmvc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	
+	
+	<!-- xfire -->
+	<dependency>
+		<groupId>org.codehaus.xfire</groupId>
+		<artifactId>xfire-all</artifactId>
+		<version>${xfire.version}</version>
+		<exclusions>
+			<exclusion>
+				<groupId>woodstox</groupId>
+				<artifactId>wstx-asl</artifactId>
+			</exclusion>
+			<exclusion>
+				<artifactId>jmock</artifactId>
+				<groupId>jmock</groupId>
+			</exclusion>
+
+			<exclusion>
+				<groupId>org.codehaus.xfire</groupId>
+				<artifactId>bcprov-jdk15</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>xfire</groupId>
+				<artifactId>opensaml</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>xml-apis</groupId>
+				<artifactId>xml-apis</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>xml-security</groupId>
+				<artifactId>xmlsec</artifactId>
+			</exclusion>
+			<exclusion>
+				<artifactId>spring</artifactId>
+				<groupId>org.springframework</groupId>
+			</exclusion>
+			<exclusion>
+				<groupId>qdox</groupId>
+				<artifactId>qdox</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>stax</groupId>
+				<artifactId>stax-api</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>net.java.dev.stax-utils</groupId>
+				<artifactId>stax-utils</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>xerces</groupId>
+				<artifactId>xercesImpl</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>xerces</groupId>
+				<artifactId>xmlParserAPIs</artifactId>
+			</exclusion>
+			<exclusion>
+				<groupId>javax.xml.bind</groupId>
+				<artifactId>jsr173_api</artifactId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+	
+	<!-- dom4j -->
+	<dependency>
+		<groupId>dom4j</groupId>
+		<artifactId>dom4j</artifactId>
+		<version>1.6.1</version>
+		<exclusions>
+			<exclusion>
+				<groupId>xml-apis</groupId>
+				<artifactId>xml-apis</artifactId>
+			</exclusion>
+
+		</exclusions>
+	</dependency>
+
+	<!-- log4j -->
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>1.2.15</version>
+		<exclusions>
+			<exclusion>
+				<artifactId>jmxtools</artifactId>
+				<groupId>com.sun.jdmk</groupId>
+			</exclusion>
+
+			<exclusion>
+				<artifactId>jmxri</artifactId>
+				<groupId>com.sun.jmx</groupId>
+			</exclusion>
+			<exclusion>
+				<artifactId>jms</artifactId>
+				<groupId>javax.jms</groupId>
+			</exclusion>
+			<exclusion>
+				<artifactId>ant</artifactId>
+				<groupId>ant</groupId>
+			</exclusion>
+		</exclusions>
+	</dependency>
+  </dependencies>
+  <build>
+    <finalName>ws</finalName>
+  </build>
+</project>

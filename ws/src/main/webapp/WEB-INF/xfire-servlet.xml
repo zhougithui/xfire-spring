@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+    "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!-- 引入XFire预配置信息 -->
+    <import resource="classpath:org/codehaus/xfire/spring/xfire.xml" />
+    <!-- 定义访问的url-->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+       <property name="urlMap">             
+           <map>                 
+              <entry key="/HelloWorldService.ws">                  
+                  <ref bean="HelloWorldService" />                 
+              </entry>             
+              <entry key="/book.ws">                  
+                  <ref bean="bookService" />                 
+              </entry>             
+           </map>         
+       </property>     
+    </bean>     
+
+    <!-- 使用XFire导出器 -->
+    <bean id="baseWebService" class="org.codehaus.xfire.spring.remoting.XFireExporter" lazy-init="false" abstract="true">
+       <!-- 引用xfire.xml中定义的工厂 -->
+       <property name="serviceFactory" ref="xfire.serviceFactory" />
+       <!-- 引用xfire.xml中的xfire实例 -->
+       <property name="xfire" ref="xfire" />
+    </bean>
+    
+    <bean id="helloUtil" class="com.bjzh.ws.hello.impl.HelloImpl"></bean>
+    <bean id="HelloWorldService" parent="baseWebService">
+       <!-- 业务服务bean -->
+       <property name="serviceBean" ref="helloUtil" />
+       <!-- 业务服务bean的窄接口类 -->
+       <property name="serviceClass" value="com.bjzh.ws.hello.IHello" />
+    </bean>
+    
+    <bean id="bookWS" class="com.bjzh.ws.book.service.impl.BookServiceImpl"></bean>   
+    <bean id="bookService" parent="baseWebService">    
+      <property name="serviceBean" ref="bookWS" />    
+      <property name="serviceClass" value="com.bjzh.ws.book.service.IBookService" />   
+    </bean> 
+</beans>
